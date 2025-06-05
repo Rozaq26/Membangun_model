@@ -6,6 +6,11 @@ import numpy as np
 import os
 from dotenv import load_dotenv
 
+
+
+import dagshub
+dagshub.init(repo_owner='Rozaq26', repo_name='Membangun_model', mlflow=True)
+
 # Load .env dan ambil username/password
 load_dotenv()
 username = os.getenv("MLFLOW_TRACKING_USERNAME")
@@ -19,10 +24,10 @@ os.environ["MLFLOW_TRACKING_USERNAME"] = username
 os.environ["MLFLOW_TRACKING_PASSWORD"] = password
 
 # Set URI tracking ke DagsHub kamu
-mlflow.set_tracking_uri("")
+mlflow.set_tracking_uri("https://dagshub.com/Rozaq26/Membangun_model.mlflow")
 
 # Set experiment name
-mlflow.set_experiment("Diabetes Modeling - Hyperparameter Tuning SVM")
+mlflow.set_experiment("Diabetes Modeling - Hyperparameter Tuning")
 
 # Load data
 X_train = pd.read_csv("dataset_preprocessing/X_train.csv")
