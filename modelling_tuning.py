@@ -8,8 +8,6 @@ from dotenv import load_dotenv
 
 
 
-import dagshub
-dagshub.init(repo_owner='Rozaq26', repo_name='Membangun_model', mlflow=True)
 
 # Load .env dan ambil username/password
 load_dotenv()
